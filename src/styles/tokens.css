@@ -1,0 +1,93 @@
+:root {
+  /* Colour — warm ivory, deep cocoa, caramel gold. Softer and richer than
+     the previous sharp editorial palette; every surface feels like linen. */
+  --ink: #33211a;
+  --ink-2: #402b21;
+  --ink-soft: #5e4739;
+  --ink-muted: #8d7765;
+  --cream: #f5ecdd;
+  --paper: #fbf6ed;
+  --white: #fffdf8;
+  --sand: #f0ddc4;
+  --sand-soft: #f8ead8;
+  --sand-deep: #e2c7a4;
+  --line: color-mix(in srgb, var(--ink) 10%, transparent);
+  --line-strong: color-mix(in srgb, var(--ink) 20%, transparent);
+
+  /* Brand aliases */
+  --pomegranate: #8a4a2e;
+  --pomegranate-deep: #6f3a22;
+  --pistachio: #a97e4e;
+  --pistachio-soft: #f7e6cf;
+  --gold: #c89a60;
+  --gold-deep: #a87944;
+  --chocolate: #4a2d1d;
+  --caramel: #b08254;
+  --tan: #d3b188;
+  --apricot: #f6d9b8;
+  --blush: #f4e2d2;
+  --danger: #9b3a26;
+  --success: #5c6b43;
+
+  /* Type */
+  --font-display:
+    var(--font-fraunces), "Iowan Old Style", "Palatino Linotype", serif;
+  --font-sans: var(--font-manrope), "Helvetica Neue", Arial, sans-serif;
+  --font-arabic: var(--font-plex-arabic), "Segoe UI", Tahoma, sans-serif;
+
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: clamp(1.25rem, 1.4vw, 1.5rem);
+  --text-xl: clamp(1.65rem, 2.6vw, 2.4rem);
+  --text-2xl: clamp(2.2rem, 4.6vw, 4rem);
+  --text-3xl: clamp(3rem, 7.5vw, 7rem);
+  --text-hero: clamp(2.9rem, 6.2vw, 6.3rem);
+
+  --tracking-label: 0.18em;
+  --tracking-wide: 0.08em;
+
+  /* Space */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --gutter: clamp(1.15rem, 4vw, 4.5rem);
+  --max: 1320px;
+  --measure: 62ch;
+
+  /* Shape & motion — soft, rounded, layered */
+  --radius-xs: 6px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --shadow-soft:
+    0 2px 4px rgb(50 33 26 / 0.04), 0 24px 48px -24px rgb(50 33 26 / 0.18);
+  --shadow-lift:
+    0 4px 8px rgb(50 33 26 / 0.05), 0 40px 70px -32px rgb(50 33 26 / 0.28);
+  --gold-bright: #e3c294;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-spring: cubic-bezier(0.3, 1.36, 0.44, 1);
+  --dur-fast: 180ms;
+  --dur: 420ms;
+  --dur-slow: 800ms;
+  --dur-page: 560ms;
+
+  --header-h: 72px;
+}
+
+[dir="rtl"] {
+  --font-display: var(--font-arabic);
+  --font-sans: var(--font-arabic);
+  --tracking-label: 0;
+  --tracking-wide: 0;
+}

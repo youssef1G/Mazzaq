@@ -1,0 +1,21 @@
+{
+  "name": "Mazzaق",
+  "short_name": "Mazzaق",
+  "description": "Egyptian patisserie in Maadi, Cairo. Baked to order.",
+  "start_url": "/en",
+  "display": "standalone",
+  "background_color": "#fffbf4",
+  "theme_color": "#60380f",
+  "icons": [
+    {
+      "src": "/images/brand/logo-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/brand/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
