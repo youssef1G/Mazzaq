@@ -45,14 +45,16 @@ async function createDatabase(): Promise<Database> {
     ]);
 
     const url = process.env.DATABASE_URL;
-    const isTransactionPooler =
-      /:6543(\/|$)/.test(url) || /(^|\.)pooler\.supabase\.com/.test(url);
+    const isPooler =
+      /:6543(\/|$)/.test(url) ||
+      /(^|\.)pooler\.supabase\.com/.test(url) ||
+      /-pooler\./.test(url);
 
     const client = postgresModule.default(url, {
       max: 10,
       onnotice: () => undefined,
-      // Supabase's transaction pooler does not support prepared statements.
-      prepare: !isTransactionPooler,
+      // Connection poolers (Neon, Supabase) do not support prepared statements.
+      prepare: !isPooler,
     });
     const db = drizzle(client, { schema }) as unknown as Database;
 
