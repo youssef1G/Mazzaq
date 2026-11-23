@@ -44,9 +44,15 @@ async function createDatabase(): Promise<Database> {
       import("postgres"),
     ]);
 
-    const client = postgresModule.default(process.env.DATABASE_URL, {
+    const url = process.env.DATABASE_URL;
+    const isTransactionPooler =
+      /:6543(\/|$)/.test(url) || /(^|\.)pooler\.supabase\.com/.test(url);
+
+    const client = postgresModule.default(url, {
       max: 10,
       onnotice: () => undefined,
+      // Supabase's transaction pooler does not support prepared statements.
+      prepare: !isTransactionPooler,
     });
     const db = drizzle(client, { schema }) as unknown as Database;
 
